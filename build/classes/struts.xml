@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	
+	<package name="login" namespace="/" extends="struts-default">
+		<action name="login" class="org.example.action.LoginAction">
+			<result name="success">/success.jsp</result>
+			<result name="failure">/login.jsp</result>
+			<result name="input">/login.jsp</result>
+			<result name="signUp">/signUp.jsp</result>
+			<result name="doctor">/doctor.jsp</result>
+		</action>
+		<action name="doctor" class="org.example.action.DoctorAction">
+		<result name="success">/doctor.jsp</result>
+		</action>
+	</package>
+	<package name="signUp" namespace="/" extends="struts-default">
+		<action name="signUp" class="org.example.action.SignUpAction">
+			<result name="success">/login.jsp</result>
+			<result name="fail">/signUp.jsp</result>
+			<result name="input">/signUp.jsp</result>
+		</action>
+		
+	</package>
+
+
+	<package name="default" namespace="/tutorials" extends="struts-default">
+		<action name="getTutorial" class="org.example.action.TutorialAction">
+			<result name="success">/result.jsp</result>
+			<result name="failure">/fail.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="" namespace="/jsp" extends="struts-default">
+	<action name="dateTimePicker" class="org.example.action.DatePickerAction" method="execute">
+		<result name="success">/result.jsp</result>
+	</action>
+</package>
+
+	<package name="reserve" namespace="/" extends="struts-default" >
+		<action name="reserve" class="org.example.action.ReserveAction" method="execute">
+			  <result name="success">/reservedPage.jsp</result>
+			  <result name="fail">/success.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>
